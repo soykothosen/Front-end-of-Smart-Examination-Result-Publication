@@ -1,0 +1,22 @@
+{
+  "name": "smart-examination-result-publication-system",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soykothosen/Smart-Examination-Result-Publication-System.git"
+  },
+  "author": "Soykot Hosen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/soykothosen/Smart-Examination-Result-Publication-System/issues"
+  },
+  "homepage": "https://github.com/soykothosen/Smart-Examination-Result-Publication-System#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
