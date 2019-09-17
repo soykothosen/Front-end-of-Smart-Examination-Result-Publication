@@ -1,25 +1,19 @@
-var express = require ('express');
+var express = require('express');
 var app = express();
 var path = require('path');
-var router = express.Router();
+var bodyParser = require('body-parser');
 
-// viewed at http://localhost:8080
-router.get('/', function(req,res){
-  res.sendFile(path.join( __dirname + '/signin.html'));
+app.use(bodyParser.urlencoded({ extended: true}));
+app.set('view engine','ejs');
+
+app.get('/',function(req,res){
+	res.render('login',{});
 });
 
-router.get('/student', function(req,res){
-  res.sendFile(path.join( __dirname + '/student.html'));
-});
 
-router.get('/signup', function(req,res){
-	res.sendFile(path.join( __dirname + '/signup.html'));
+app.listen('8080', function(err){
+	if(err){
+		throw err;
+	}
+	console.log("Server run on port 8080");
 });
-
-router.get('/teacher',function(req,res){
-	res.sendFile(path.join( __dirname + '/teacher.html'))
-});
-
-app.use('/', router);
-console.log("Server started on port 8080");
-app.listen(8080);
