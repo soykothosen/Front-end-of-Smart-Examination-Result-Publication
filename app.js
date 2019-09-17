@@ -10,6 +10,10 @@ app.get('/',function(req,res){
 	res.render('login',{});
 });
 
+app.get('/signup',function(req,res){
+	res.render('signup',{});
+});
+
 
 app.listen('8080', function(err){
 	if(err){
