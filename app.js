@@ -14,6 +14,14 @@ app.get('/signup',function(req,res){
 	res.render('signup',{});
 });
 
+app.post('/profile',function(req,res){
+	var email = req.body.email;
+	var password = req.body.password;
+	var type = req.body.type;
+	console.log(email);
+	console.log(password);
+	console.log(type);
+});
 
 app.listen('8080', function(err){
 	if(err){

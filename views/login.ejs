@@ -13,31 +13,31 @@
   <body>
     <h1>Smart Examination Result Publication System</h1>
 
-    <form>
-  <div class="form-group row">
+    <form action = "/profile" method = "POST">
+  <div class="form-group row" >
     <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
     <div class="col-sm-10">
-      <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+      <input type="email" name="email" class="form-control" id="inputEmail3" placeholder="Email">
     </div>
   </div>
   <div class="form-group row">
     <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
     <div class="col-sm-10">
-      <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
+      <input type="password" name="password" class="form-control" id="inputPassword3" placeholder="Password">
     </div>
   </div>
   <fieldset class="form-group">
     <div class="row">
-      <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
+      <legend class="col-form-label col-sm-2 pt-0">Type</legend>
       <div class="col-sm-10">
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+          <input class="form-check-input" name="type" type="radio" name="gridRadios" id="gridRadios1" value="teacher" checked>
           <label class="form-check-label" for="gridRadios1">
             Teacher
           </label>
         </div>
         <div class="form-check">
-          <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+          <input class="form-check-input" name="type" type="radio" name="gridRadios" id="gridRadios2" value="student">
           <label class="form-check-label" for="gridRadios2">
             Student
           </label>
@@ -49,7 +49,7 @@
   <div class="container">
   <div class="row">
     <div class="col-sm">
-      <a role="button" class="btn btn-outline-dark" href="/profile">Sign In</a>
+      <button type="submit" class="btn btn-primary">Submit</button>
     </div>
     <div class="col-sm">
      <a role="button" class="btn btn-outline-dark" href="/signup">Sign Up</a>
