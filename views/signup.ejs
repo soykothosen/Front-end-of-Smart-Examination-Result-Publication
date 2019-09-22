@@ -8,21 +8,23 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
+    <title>Sign Up | Smart Examination Result Publication System</title>
   </head>
   <body>
     <h1> Sign Up Page</h1>
-    <form>
+
+  
+  <form action="/success" method="POST">
 
 
   <div class="form-row">
     <div class="col">
       <label>Full name</label>
-      <input type="text" class="form-control" placeholder="Full name">
+      <input type="text" name="name" class="form-control" placeholder="Full name">
     </div>
     <div class="col">
       <label >Id No</label>
-      <input type="text" class="form-control" placeholder="Id no">
+      <input type="text" name="id" class="form-control" placeholder="Id no">
     </div>
   </div>
 
@@ -30,23 +32,38 @@
 
     <div class="form-group col-md-6">
       <label for="inputEmail4">Email</label>
-      <input type="email" class="form-control" id="inputEmail4" placeholder="Email">
+      <input type="email" name="email" class="form-control" id="inputEmail4" placeholder="Email">
     </div>
     <div class="form-group col-md-6">
       <label for="inputPassword4">Password</label>
-      <input type="password" class="form-control" id="inputPassword4" placeholder="Password">
+      <input type="password" name="password" class="form-control" id="inputPassword4" placeholder="Password">
     </div>
   </div>
- <div class="container">
-  <div class="row">
-    <div class="col-sm">
-     <a role="button" class="btn btn-outline-dark" href="/success">Teacher</a>
+  
+  <fieldset class="form-group">
+    <div class="row">
+      <legend class="col-form-label col-sm-2 pt-0">Type</legend>
+      <div class="col-sm-10">
+        <div class="form-check">
+          <input class="form-check-input" name="type" type="radio" name="gridRadios" id="gridRadios1" value="teacher" checked>
+          <label class="form-check-label" for="gridRadios1">
+            Teacher
+          </label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" name="type" type="radio" name="gridRadios" id="gridRadios2" value="student">
+          <label class="form-check-label" for="gridRadios2">
+            Student
+          </label>
+        </div>
+      </div>
     </div>
-    <div class="col-sm">
-     <a role="button" class="btn btn-outline-dark" href="/success">Student</a>
-    </div>
-  </div>
-</div>
+  </fieldset>
+
+      <div class="col-sm">
+      <button type="submit" class="btn btn-outline-dark">Sign Up</button>
+    </div> 
+
 </form>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
