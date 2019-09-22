@@ -47,10 +47,11 @@ app.post('/success', function(req,res){
 	var type = req.body.type;
 
 
-	 db.query("INSERT INTO students (id_no, name, email, pass) VALUES (1603028, 'Soykot Hosen', 'soykot@gmail.com', '12345')",function(err, results, fields){
+	 db.query("INSERT INTO students (id_no, name, email, pass) VALUES (?, ?, ?, ?)",[id, name, email, password],function(err, results, fields){
     if(err){
       throw err;
     }
+});
 
 
 	
