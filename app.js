@@ -37,6 +37,9 @@ app.post('/profile',function(req,res){
 	console.log(password);
 	console.log(type);
 
+
+	if(type == "student"){
+
 	db.query("SELECT pass FROM students WHERE id_no = ?",[id],function(err, results, fields){
     if(err){
       throw err;
@@ -45,9 +48,23 @@ app.post('/profile',function(req,res){
     if(results[0].pass == password){
      res.render('stdprofile',{});	
     }
-});
+    });
 
-	
+	}
+	else{
+
+	db.query("SELECT pass FROM teachers WHERE id_no = ?",[id],function(err, results, fields){
+    if(err){
+      throw err;
+    }
+    console.log(results[0].pass);
+    if(results[0].pass == password){
+     res.render('teaprofile',{});	
+    }
+    });
+
+	}
+
 });
 
 app.post('/success', function(req,res){
@@ -58,14 +75,24 @@ app.post('/success', function(req,res){
 	var type = req.body.type;
 
 
-	 db.query("INSERT INTO students (id_no, name, email, pass) VALUES (?, ?, ?, ?)",[id, name, email, password],function(err, results, fields){
+	if (type == "student"){
+
+    db.query("INSERT INTO students (id_no, name, email, pass) VALUES (?, ?, ?, ?)",[ id, name, email, password],function(err, results, fields){
     if(err){
       throw err;
     }
-});
+    });
 
+	}
+	else{
 
-	
+    db.query("INSERT INTO teachers (id_no, name, email, pass) VALUES (?, ?, ?, ?)",[ id, name, email, password],function(err, results, fields){
+    if(err){
+      throw err;
+    }
+    });
+
+	}
 
 	console.log(id);
 	console.log(name);
@@ -75,6 +102,10 @@ app.post('/success', function(req,res){
 
 	res.render('success',{});
 });
+
+
+
+
 
 app.listen('8080', function(err){
 	if(err){
