@@ -31,12 +31,23 @@ app.get('/signup',function(req,res){
 });
 
 app.post('/profile',function(req,res){
-	var email = req.body.email;
+	var id = req.body.id;
 	var password = req.body.password;
 	var type = req.body.type;
-	console.log(email);
 	console.log(password);
 	console.log(type);
+
+	db.query("SELECT pass FROM students WHERE id_no = ?",[id],function(err, results, fields){
+    if(err){
+      throw err;
+    }
+    console.log(results[0].pass);
+    if(results[0].pass == password){
+     res.render('stdprofile',{});	
+    }
+});
+
+	
 });
 
 app.post('/success', function(req,res){
