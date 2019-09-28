@@ -21,7 +21,6 @@ db.connect(function(err){
 	console.log("Database is connected");
 });
 
-
 app.get('/',function(req,res){
 	res.render('login',{});
 });
@@ -103,6 +102,16 @@ app.post('/success', function(req,res){
 	res.render('success',{});
 });
 
+
+ app.post('/publish', function(req,res){
+	
+	var  mark1 = req.body.mark1;
+	var  mark2 = req.body.mark2;
+	//console,log(mark1);
+	//console.log(mark2);
+	//res.render('teaprofile',{});
+	res.send(mark2);
+ });
 
 
 
