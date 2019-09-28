@@ -107,10 +107,26 @@ app.post('/success', function(req,res){
 	
 	var  mark1 = req.body.mark1;
 	var  mark2 = req.body.mark2;
-	//console,log(mark1);
-	//console.log(mark2);
-	//res.render('teaprofile',{});
-	res.send(mark2);
+	
+	
+	console.log(mark1);
+	console.log(mark2);
+
+	db.query("INSERT INTO s1603028 (cor_name, mark) VALUES (?, ?)",["CSE 3105", mark1],function(err, results, fields){
+		if(err){
+		  throw err;
+		}
+		});
+	
+		db.query("INSERT INTO s1603029 (cor_name, mark) VALUES (?, ?)",["CSE 3105", mark2],function(err, results, fields){
+			if(err){
+			  throw err;
+			}
+			});	
+	
+	
+	res.render('teaprofile',{});
+	
  });
 
 
