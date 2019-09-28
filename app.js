@@ -45,7 +45,20 @@ app.post('/profile',function(req,res){
     }
     console.log(results[0].pass);
     if(results[0].pass == password){
-     res.render('stdprofile',{});	
+    
+		db.query("SELECT * FROM `s1603028`",function(err, results, fields){
+			if(err){
+			  //throw err;
+			}
+			console.log(results.length);
+			
+			var i;
+			for (i = 0; i < results.length; i++) {
+			console.log(results[i].stud_no);
+			}
+			res.render('stdprofile', {length : results.length , result : results});
+		   });
+     	
     }
     });
 
